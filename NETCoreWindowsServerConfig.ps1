@@ -46,7 +46,7 @@ https://github.com/Microsoft/ASPNETCoreWindowsConfig/blob/master/README.md#relea
 
 #> 
 
-configuration ASPNETCoreWindowsConfig
+configuration NETCoreWindowsServerConfig
 {
 
 Import-DscResource -ModuleName @{ModuleName = 'xWebAdministration';ModuleVersion = '1.19.0.0'}
