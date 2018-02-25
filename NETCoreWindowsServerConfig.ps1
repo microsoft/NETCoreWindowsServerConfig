@@ -80,8 +80,9 @@ Import-DscResource -ModuleName 'PSDesiredStateConfiguration'
 
     xPendingReboot AfterDotNetCoreHosting
     {
-        Name      = 'AfterDotNetCoreHosting'
-        DependsOn = '[Package]InstallDotNetCoreHostingBundle'
+        Name             = 'AfterDotNetCoreHosting'
+        SkipCcmClientSDK = $true
+        DependsOn        = '[Package]InstallDotNetCoreHostingBundle'
     }
 
     xWebsite DefaultSite 
