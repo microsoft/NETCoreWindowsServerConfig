@@ -1,6 +1,6 @@
 ASP.NET Core Windows Server Configuration
 
-[![Build status](https://ci.appveyor.com/api/projects/status/y3u9qoie6854tpe3/branch/master?svg=true)](https://ci.appveyor.com/project/mgreenegit/windowsiisserverconfig/branch/master)
+[![Build status](https://ci.appveyor.com/api/projects/status/71329l9a1ct60esr/branch/master?svg=true)](https://ci.appveyor.com/project/mgreenegit/netcorewindowsserverconfig/branch/master)
 
 This DSC Configuration script is in PREVIEW
 as a minimal viable product.
