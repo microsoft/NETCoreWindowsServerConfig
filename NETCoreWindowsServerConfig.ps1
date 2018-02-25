@@ -63,7 +63,7 @@ Import-DscResource -ModuleName 'PSDesiredStateConfiguration'
     # https://gist.github.com/eonarheim/703e0f1807b26066d6a2ff5acf4f662d
     Package InstallDotNetCoreHostingBundle {
         Name      = 'Microsoft ASP.NET Core Module'
-        ProductId = 'B1B05FBB-1255-4F5B-9BAF-43B971A92613'
+        ProductId = '49FDA0AA-4653-4432-88BF-ADAA61DD5735'
         Arguments = "/quiet /norestart /log $env:TEMP\dnhosting_install.log"
         Path      = 'https://download.microsoft.com/download/1/1/0/11046135-4207-40D3-A795-13ECEA741B32/DotNetCore.2.0.5-WindowsHosting.exe'
         DependsOn = '[WindowsFeature]WebServer'
