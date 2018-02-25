@@ -93,19 +93,19 @@ Import-DscResource -ModuleName 'PSDesiredStateConfiguration'
         DependsOn       = '[WindowsFeature]WebServer'
     }
 
-    File AppContent
+    File Content
     {
         Ensure          = 'Present'
-        DestinationPath = 'c:\inetpub\approot'
+        DestinationPath = 'c:\inetpub\content'
         Type            = 'Directory'
     }
 
     File Logs
     {
         Ensure          = 'Present'
-        DestinationPath = 'c:\inetpub\approot\logs'
+        DestinationPath = 'c:\inetpub\content\logs'
         Type            = 'Directory'
-        DependsOn       = '[File]WebContent'
+        DependsOn       = '[File]Content'
     }
     
     xWebAppPool AppPool
@@ -120,7 +120,7 @@ Import-DscResource -ModuleName 'PSDesiredStateConfiguration'
         Ensure          = 'Present'
         Name            = 'Website'
         State           = 'Started'
-        PhysicalPath    = 'c:\inetpub\approot'
+        PhysicalPath    = 'c:\inetpub\content'
         BindingInfo = MSFT_xWebBindingInformation
             {
                 Protocol              = 'Http'
@@ -128,7 +128,7 @@ Import-DscResource -ModuleName 'PSDesiredStateConfiguration'
                 IPAddress             = '*'
                 Hostname              = '*'
             } 
-        DependsOn       = '[File]WebContent','[xWebAppPool]AppPool'
+        DependsOn       = '[File]Content','[xWebAppPool]AppPool'
     }
 
     xWebApplication SampleApplication 
@@ -147,7 +147,7 @@ Import-DscResource -ModuleName 'PSDesiredStateConfiguration'
             Windows     = $false
         }
         SslFlags                = ''
-        PhysicalPath            = 'c:\inetpub\approot'
+        PhysicalPath            = 'c:\inetpub\content'
         DependsOn               = '[xWebsite]WebSite','[xWebAppPool]AppPool'
     }
 }
